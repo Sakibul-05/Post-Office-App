@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter Tight', sans-serif;
+}
+:root{
+    --bgBlack:  #000000;
+    --bgGreyBlue: #575A85;
+    --headerTextColor: #575A85;
+    --paraTextColor: #B8BCCC;
+}
+.container{
+    display: flex;
+    
+}
+aside{
+  
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    /* flex-shrink: 0; */
+}
+aside.left-section{
+    background-color: var(--bgBlack);
+    padding: 2%;
+    
+}
+aside.left-section .text-section header h2{
+    color: var(--headerTextColor);
+    font-size: 36px;
+    padding-bottom: 2%;
+}
+.image-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+}
+.image-section img{
+    width: 80%;
+}
+aside.left-section .text-section p{
+    color: var(--paraTextColor);
+}
+aside.right-section{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bgGreyBlue);
+}
+  
+.right-section .content p{
+    padding-bottom: 7%;
+    font-size: 28px;
+    color: var(--paraTextColor);
+}
+p #ipAddress{
+    color: #ffff;
+}
+.right-section .content button{
+    width: 245px;
+    height: 47px;
+    font-size: 18px;
+    background-color: var(--bgGreyBlue);
+    border: 2px solid var(--paraTextColor);
+    border-radius: 10px;
+    color: var(--paraTextColor);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.right-section .content button a{
+    text-decoration: none;
+    color: var(--paraTextColor);
+}
+button:active {
+    transform: translateY(2px);
+}
+.right-section .content button:hover{
+    background-color: #ffff;
+}
+.right-section .content button:hover a{
+    
+    color: #494c71;
+}
+
+
+@media screen and (max-width: 720px) {
+    .container{
+        flex-direction: column;
+        height: 100vh; 
+        flex-wrap: wrap;
+    }
+    aside.left-section{
+        width: 100%;
+        height: 60%;
+    }
+    aside.right-section{
+        width: 100%;
+        height: 40%;
+    }
+    .image-section{
+        padding-top: 0;
+        height: auto; 
+    }
+    .image-section img{
+       width: 45%; 
+    }
+    .text-section{
+        padding-bottom: 2%;
+    }
+    aside.left-section .text-section header h2{
+        font-size: 28px;
+        padding-bottom: 1%;
+    }
+    aside.left-section .text-section p{
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .right-section .content p{
+        font-size: 18px;
+    }
+    
+    .right-section .content button{
+        width: 145px;
+        height: 37px;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .image-section{
+        padding-top: 0;
+        height: auto; 
+    }
+    
+    .image-section img{
+       width: 60%; 
+    }
+    aside.left-section .text-section header h2{
+        font-size: 23px;
+        padding-bottom: 1%;
+    }
+    aside.left-section .text-section p{
+        font-size: 12px;
+    }
+    .text-section{
+        padding-bottom: 10%;
+    }
+}
