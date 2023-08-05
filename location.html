@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./location.css">
+    <title>Location Info</title>
+</head>
+<body >
+    <div class="container">
+        <div class="location-info">
+            <div>
+                <div>
+                    <p class="ipAddress">IP Address: <span id="ip"></span></p>
+                </div>
+                <div>
+                    <div class="lat-long">
+                        <p>Lat: <span id="latitude"> </span></p>
+                        <p>Lat: <span id="longtitude"> </span></p>
+                    </div>
+                    <div class="city-region">
+                        <p>City: <span id="city"> </span></p>
+                        <p>Region: <span id="region"> </span></p>
+                    </div>
+                    <div class="org-hostname">
+                        <p>Organisation: <span id="organisation"> </span></p>
+                        <p>Hostname: <span id="hostname">Unknown</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="location-map-container">
+            <div class="header-section">
+                <h2>Your Current Location</h2>
+            </div>
+            <!-- Map -->
+            <iframe 
+                width="80%" 
+                height="479" 
+                frameborder="0" 
+                allowfullscreen="" 
+                aria-hidden="false" 
+                tabindex="0" 
+                 > 
+            </iframe>
+             
+        </div>
+        <div class="more-info-container">
+            <div class="header-section">
+                <h2>More Information About You</h2>
+            </div>
+            <div class="more-info-section">
+                <p>Time Zone: <span id="timeZone"></span></p>
+                <p>Date And Time: <span id="dateTime"></span></p>
+                <p>Pincode: <span id="pincode"></span></p>
+                <p>Message: Number of pincode(s) found: <span id="numberOfPincode"></span></p>
+            </div>
+        </div>
+        <div class="post-offices-container">
+            <div class="header-section">
+                <h3>Post Offices Near You</h3>
+            </div>
+            <div id="searchBox">
+               <input id="searchInput" type='text' name='postOfficeName' placeholder='Search By Name'>
+            </div>
+            <div class="post-offices">
+                 
+            </div>
+        </div>
+    </div>
+
+    <script src="./location.js"></script>
+</body>
+</html>
