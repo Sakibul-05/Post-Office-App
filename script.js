@@ -22,7 +22,8 @@ function myFunction(){
     })
   }).catch(err=>{
     console.log(err);
-    alert(`https://api.ipify.org?format=json--> this api is not working`);
+    alert(`https://api.ipify.org?format=json--> this api is not working
+    Please remove ad blocker from browser`);
   });
 }
 
@@ -37,7 +38,8 @@ function getInfo(ip){
   })
   .catch(error=>{
     console.log(error);
-    alert("https://ipinfo.io/${ip}/geo--> this api is not working")
+    alert(`https://ipinfo.io/${ip}/geo--> this api is not working
+    Please remove ad blocker from browser`)
   })
 
 }
