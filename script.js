@@ -12,7 +12,7 @@ function myFunction(){
     console.log(data.ip);
  
     ipAddress.innerText = data.ip;
-    localStorage.setItem("ipAddress", data.ip)
+     
     //call this function to fetch locationInfo by using ip
     getInfo(data.ip);
   }).catch(err=>{
@@ -21,7 +21,7 @@ function myFunction(){
 }
 
 function getInfo(ip){
-  let url = `http://ip-api.com/json/${ip}`;
+  let url = `https://ip-api.com/json/${ip}`;
   fetch(url).then(res=> res.json()).then(data=>{
     console.log(data);
     
@@ -32,7 +32,7 @@ function getInfo(ip){
     // Convert the array to a JSON string and send it to seasinStorage
     sessionStorage.setItem("dataArray", JSON.stringify(dataArray))
   }).catch(error=>{
-    alert("http://ip-api.com/json/${ip}--> this api is not working")
+    alert("https://ip-api.com/json/${ip}--> this api is not working")
   })
 }
  
