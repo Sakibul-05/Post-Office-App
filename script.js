@@ -1,5 +1,6 @@
 const ipAddress = document.getElementById('ipAddress');
 const getStartedButton = document.getElementById('getStartedButton');
+const message = document.querySelector('.message')
  
 //myFunction will be execute onload page
 function myFunction(){
@@ -14,7 +15,10 @@ function myFunction(){
     getStartedButton.addEventListener('click', ()=>{
       //call this function to fetch locationInfo by using ip
       getInfo(data.ip);
-      
+      message.innerText = 'Waiting to redirect...'
+      setTimeout(() => {
+        window.location.href ='./location.html';
+      }, 2000);
     })
   }).catch(err=>{
     console.log(err);
