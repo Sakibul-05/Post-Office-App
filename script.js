@@ -1,4 +1,3 @@
-
 const ipAddress = document.getElementById('ipAddress');
 const getStartedButton = document.getElementById('getStartedButton');
  
@@ -12,29 +11,30 @@ function myFunction(){
     console.log(data.ip);
  
     ipAddress.innerText = data.ip;
-     
-    //call this function to fetch locationInfo by using ip
-    getInfo(data.ip);
+    getStartedButton.addEventListener('click', ()=>{
+      //call this function to fetch locationInfo by using ip
+      getInfo(data.ip);
+      
+    })
   }).catch(err=>{
+    console.log(err);
     alert(`https://api.ipify.org?format=json--> this api is not working`);
   });
 }
 
 function getInfo(ip){
-  let url = `https://ip-api.com/json/${ip}`;
+  // let url = `http://ip-api.com/json/${ip}`;
+  let url = `https://ipinfo.io/${ip}/geo`
   fetch(url).then(res=> res.json()).then(data=>{
     console.log(data);
     
-    const data1 = data;
-    const data2 = ip;
-    // Combine the data into an array
-    const dataArray = [data1, data2];
     // Convert the array to a JSON string and send it to seasinStorage
-    sessionStorage.setItem("dataArray", JSON.stringify(dataArray))
-  }).catch(error=>{
-    alert("https://ip-api.com/json/${ip}--> this api is not working")
+    sessionStorage.setItem("ipInfo", JSON.stringify(data))
   })
-}
- 
+  .catch(error=>{
+    console.log(error);
+    alert("https://ipinfo.io/${ip}/geo--> this api is not working")
+  })
 
+}
  
