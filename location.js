@@ -64,8 +64,9 @@ if(ipInfo){
       //call this function --> as the function is regular function so i can call it before declearation
       getPostOffice(ipInfo.postal)
 }else{
-  console.log("Unable to get the data");
-  alert(`Unable to get the data from server`);
+  console.log("Unable to get the data. Please remove ad blocker or try on another broswer");
+  alert(`Unable to get the data from server
+  Please remove ad blocker from browser`);
 }
 
 
